@@ -1,32 +1,404 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="Css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <title>RDisseny</title>
+    <link rel="icon" type="image/png" href="Img/RD logo.jpg">
+    <link rel="stylesheet" href="Css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="chat">
-        <div class="chat-header">
-            <img src="Img/ramon.jpg" alt="Foto de perfil" class="avatar" id="profile-image">
-            <div class="header-info">
-                <h1>RDisseny</h1>
-                <p id="last-connection">Última conexión: 12:30</p>
-            </div>
+    <header>
+        <div class="logo">RDisseny</div>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
         </div>
-        <div class="chat-container" id="chat-container">
-            <!-- Mensajes se agregarán dinámicamente aquí -->
+        <nav class="menu">
+            <ul>
+                <li><a href="#perfil" class="active">Perfil</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#educacion">Educación</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="menu-popup" id="menu-popup">
+            <span class="close-button" onclick="toggleMenu()">✖</span>
+            <div class="menu-item"><a href="#perfil" onclick="toggleMenu()">Perfil</a></div>
+            <div class="menu-item"><a href="#experiencia" onclick="toggleMenu()">Experiencia</a></div>
+            <div class="menu-item"><a href="#educacion" onclick="toggleMenu()">Educación</a></div>
+            <div class="menu-item"><a href="#proyectos" onclick="toggleMenu()">Proyectos</a></div>
+            <div class="menu-item"><a href="#contacto" onclick="toggleMenu()">Contacto</a></div>
         </div>
-        <div class="chat-input">
-            <input type="text" id="user-input" placeholder="Escribe un mensaje...">
-            <i id="enviar-icon" class="fa-solid fa-location-arrow" onclick="enviarMensaje()"></i>
-        </div>
-    </div>
-    <script src="JavaScript/script.js"></script>
-       
+        
+    </header>
+    
+    
+    
 
+    <div class="line-buttons">
+        <div class="line" onclick="activateLine(this)"></div>
+        <div class="line" onclick="activateLine(this)"></div>
+        <div class="line" onclick="activateLine(this)"></div>
+        <div class="line" onclick="activateLine(this)"></div>
+        <div class="line" onclick="activateLine(this)"></div>
+    </div>
+
+    <main class="info-column">
+        <section id="perfil">
+            <div class="perfil-container">
+                <div class="perfil-texto">
+                    <h2>Ramon Bartomeu</h2>
+                    <h3>Diseñador Web / Gráfico</h3>
+                    <p>
+                        Cuento con dos años de experiencia en diseño, especializándome en web con un enfoque en UI/UX. 
+                        Mi formación en Diseño Gráfico y Animación de Videojuegos refuerza mis habilidades. 
+                        Disfruto enfrentar proyectos desafiantes, trabajando en equipo para alcanzar el éxito.
+                    </p>
+                    <a href="Assets/Curriculum Ramon.pdf" class="download-btn" data-text="Descargar currículum">Descargar currículum</a>
+
+                    <div class="scroll-down">
+                        <span>Deslizar</span>
+                        <div class="square">
+                            <div class="moving-line"></div>
+                        </div>
+                    </div>
+
+                    <div class="experience-container">
+                        <h2>Funcionalidad y estética</h2>
+                        <div class="experience-line"></div>
+                    </div>
+
+                </div>
+                
+                <div class="perfil-imagen">
+                    <img src="Img/ramon.jpg" alt="Perfil">
+                    <div class="shadow"></div>
+                </div>
+            </div>
+            
+        </section>      
+           
+        
+
+
+
+        <section id="experiencia" class="timeline-section">
+            <h2>Experiencia</h2>
+        
+            <div class="timeline-item">
+                <div class="timeline-date">2024</div>
+                <div class="timeline-content">
+                    <h3><strong>DISEÑADOR GRÁFICO - WEB</strong> <span>| Comuniza (Barcelona)</span></h3>
+                    <ul>
+                        <li>Estructurar y maquetar diseños con Figma.</li>
+                        <li>Gestionar contenido web y optimizar SEO con WordPress.</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-date">2021</div>
+                <div class="timeline-content">
+                    <h3><strong>MONITOR DE PISTA</strong> <span>| Gené Karting (Viladecans)</span></h3>
+                    <ul>
+                        <li>Atención al cliente y supervisor del correcto uso del servicio.</li>
+                        <li>Asesoramiento sobre la información del servicio.</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-date">2019</div>
+                <div class="timeline-content">
+                    <h3><strong>MONITOR TIC</strong> <span>| Fundación Viladecans</span></h3>
+                    <ul>
+                        <li>Formación en robótica y alfabetización informática.</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-date">2019</div>
+                <div class="timeline-content">
+                    <h3><strong>DISEÑADOR GRÁFICO</strong> <span>| TV3 (Sant Joan Despí)</span></h3>
+                    <ul>
+                        <li>Diseñar propuestas gráficas con Adobe.</li>
+                        <li>Desarrollar el proyecto a través de una comunicación efectiva, potenciando la planificación y el conocimiento compartido.</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-date">2017</div>
+                <div class="timeline-content">
+                    <h3><strong>DISEÑADOR WEB</strong> <span>| Fundación Viladecans</span></h3>
+                    <ul>
+                        <li>Gestionar la página web a través de WordPress.</li>
+                        <li>Programación de la página web con HTML, CSS y JavaScript.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+
+        
+
+        <section id="educacion" class="education-section">
+            <h2 class="education-title">Educación</h2> <!-- Título de Educación -->
+            
+            <div class="education-container">
+                <div class="education-column">
+                    <!-- Elementos de Educación -->
+                    <div class="education-item">
+                        <div class="education-year">2024</div>
+                        <div class="education-content">
+                            <h3><strong>Grado en Diseño Gráfico</strong></h3>
+                            <p>ESDAPC Campus Serra i Abella</p>
+                        </div>
+                    </div>
+        
+                    <div class="education-item">
+                        <div class="education-year">2019</div>
+                        <div class="education-content">
+                            <h3><strong>CFGS de Artes Plásticas y Diseño</strong></h3>
+                            <p>EMAID</p>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-year">2019</div>
+                        <div class="education-content">
+                            <h3><strong>Título de Monitor de Tiempo Libre</strong></h3>
+                            <p>EFA</p>
+                        </div>
+                    </div>
+        
+                    <div class="education-item">
+                        <div class="education-year">2017</div>
+                        <div class="education-content">
+                            <h3><strong>CFGM en Asistencia al Producto Gráfico Interactivo</strong></h3>
+                            <p>EMAID</p>
+                        </div>
+                    </div>
+                </div>
+        
+
+
+
+                <div class="skills-column">
+                    <h2 class="skills-title">Habilidades</h2> <!-- Título de Habilidades -->
+                    <ul class="skills-list">
+                        <li>
+                            <strong>Photoshop</strong>
+                            <div class="skill-level">
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                            </div>
+                            <span class="skill-percentage">100%</span>
+                        </li>
+                        <li>
+                            <strong>Illustrator</strong>
+                            <div class="skill-level">
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                            </div>
+                            <span class="skill-percentage">100%</span>
+                        </li>
+                        <li>
+                            <strong>InDesign</strong>
+                            <div class="skill-level">
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                            </div>
+                            <span class="skill-percentage">100%</span>
+                        </li>
+                        <li>
+                            <strong>Premiere Pro</strong>
+                            <div class="skill-level">
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level"></div>
+                            </div>
+                            <span class="skill-percentage">80%</span>
+                        </li>
+                        <li>
+                            <strong>After Effects</strong>
+                            <div class="skill-level">
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level"></div>
+                                <div class="level"></div>
+                            </div>
+                            <span class="skill-percentage">60%</span>
+                        </li>
+                
+                        <!-- Línea de separación -->
+                        <hr class="skills-separator">
+                
+                        <li>
+                            <strong>WordPress</strong>
+                            <div class="skill-level">
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                            </div>
+                            <span class="skill-percentage">100%</span>
+                        </li>
+                        <li>
+                            <strong>Figma</strong>
+                            <div class="skill-level">
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                            </div>
+                            <span class="skill-percentage">100%</span>
+                        </li>
+                        <li>
+                            <strong>HTML</strong>
+                            <div class="skill-level">
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level"></div>
+                            </div>
+                            <span class="skill-percentage">80%</span>
+                        </li>
+                        <li>
+                            <strong>CSS</strong>
+                            <div class="skill-level">
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level"></div>
+                            </div>
+                            <span class="skill-percentage">80%</span>
+                        </li>
+                        <li>
+                            <strong>JavaScript</strong>
+                            <div class="skill-level">
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level filled"></div>
+                                <div class="level"></div>
+                                <div class="level"></div>
+                            </div>
+                            <span class="skill-percentage">60%</span>
+                        </li>
+                        <li>
+                            <strong>Git</strong>
+                            <div class="skill-level">
+                                <div class="level filled"></div>
+                                <div class="level"></div>
+                                <div class="level"></div>
+                                <div class="level"></div>
+                                <div class="level"></div>
+                            </div>
+                            <span class="skill-percentage">20%</span>
+                        </li>
+                        <li>
+                            <strong>Python</strong>
+                            <div class="skill-level">
+                                <div class="level filled"></div>
+                                <div class="level"></div>
+                                <div class="level"></div>
+                                <div class="level"></div>
+                                <div class="level"></div>
+                            </div>
+                            <span class="skill-percentage">20%</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                
+                </div>
+                
+            </div>
+        </section>
+        
+        
+
+        
+        
+        
+        
+        
+
+
+        <section id="proyectos" class="projects-section">
+            <h2>Proyectos</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>Chat de WhatsApp</h3>
+                    <p>HTML, CSS, JavaScript</p>
+                    <a href="Proyectos/index.html" target="_blank" class="project-button"></a> <!-- Flecha sin texto -->
+                </div>
+        
+                <div class="project-card">
+                    <h3>Repositorio de IA</h3>
+                    <p>Figma</p>
+                    <a href="https://www.figma.com/proto/tThA33JOHWsA79CI1X1AzL/PAg-web-TFG?page-id=0%3A1&node-id=238-330&t=kc1j4iZofOsyb3lx-1" target="_blank" class="project-button"></a> <!-- Flecha sin texto -->
+                </div>
+        
+                <div class="project-card">
+                    <h3>La web de una boda</h3>
+                    <p>WordPress</p>
+                    <a href="https://spanglish-wedding.com/" target="_blank" class="project-button"></a> <!-- Flecha sin texto -->
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+        
+
+
+
+        <section id="contacto" class="contact-section">
+            <h2>Contacto</h2>
+            <p>Si quieres contactar conmigo, no dudes en escribirme. ¡Estoy aquí para ayudar!</p>
+            <p class="email">Ramoonbar@gmail.com</p>
+            <div class="contact-buttons">
+                <a href="https://www.linkedin.com/in/rdisseny" target="_blank" class="social-button">LinkedIn</a>
+                <a href="https://github.com/Ramoonbar" target="_blank" class="social-button">GitHub</a>
+                <a href="https://www.behance.net/Rdisseny" target="_blank" class="social-button">Behance</a>
+            </div>
+        </section>
+
+
+
+        
+
+    </main>
+
+    <div class="social-buttons">
+        <a href="https://www.linkedin.com/in/rdisseny" target="_blank" class="social-btn active">In</a>
+        <a href="https://github.com/Ramoonbar" target="_blank" class="social-btn">Git</a>
+        <a href="https://www.behance.net/Rdisseny" target="_blank" class="social-btn">Be</a>     
+    </div>
+
+    <script src="JavaScript/script.js"></script>
 </body>
 </html>

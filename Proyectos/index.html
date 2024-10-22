@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>RDisseny</title>
+</head>
+<body>
+    <div class="chat">
+        <div class="chat-header">
+            <img src="Img/ramon.jpg" alt="Foto de perfil" class="avatar" id="profile-image">
+            <div class="header-info">
+                <h1>RDisseny</h1>
+                <p id="last-connection">Última conexión: 12:30</p>
+            </div>
+        </div>
+        <div class="chat-container" id="chat-container">
+            <!-- Mensajes se agregarán dinámicamente aquí -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Escribe un mensaje...">
+            <i id="enviar-icon" class="fa-solid fa-location-arrow" onclick="enviarMensaje()"></i>
+        </div>
+    </div>
+    <script src="JavaScript/script.js"></script>
+       
+
+</body>
+</html>

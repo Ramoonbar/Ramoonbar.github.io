@@ -1,0 +1,197 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eff0f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; /* Añadido para posicionar el fondo de manera relativa */
+}
+
+.chat-header p{
+color: #000000;
+
+}
+.chat {
+    background-image: url('../Img/background.jpg'); /* Reemplaza con la ruta de tu imagen de fondo o la URL */
+    background-size:30%; /* Ajusta el tamaño de la imagen para cubrir toda la pantalla */
+    /* background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    background-attachment: fixed; /* Mantiene la imagen en su lugar al desplazarte por la página */
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Forma redonda */
+    margin-right: 15px; /* Espacio entre la imagen y el texto */
+    margin-left: 20px; /* Espacio entre la imagen y el lado izquierdo */
+    transition: opacity 0.3s, cursor 0.3s; /* Agrega una transición suave para la opacidad y el cursor */
+}
+
+/* Estilo cuando el cursor está sobre la imagen */
+.avatar:hover {
+    cursor: pointer; /* Cambia el cursor a una mano */
+    opacity: 0.7; /* Cambia la opacidad al 70% al pasar el cursor */
+}
+
+.header-info {
+    margin-top: 13px;
+    display: flex;
+    flex-direction: column; /* Para alinear elementos verticalmente */
+    align-items: flex-start; /* Para alinear el texto a la izquierda */
+}
+
+#last-connection {
+    font-size: 14px;
+    color: #888; /* Color de texto gris para la última conexión */
+}
+
+.chat-header {
+    background-color: rgb(255, 255, 255);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    display: flex; /* Agregado para alinear elementos */
+    align-items: center; /* Agregado para alinear elementos */
+    
+}
+
+.chat-header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #000000af;
+}
+
+.chat-header p {
+    font-size: 14px;
+    margin-top: 5px;
+    opacity: 0.8;
+}
+
+
+/* Estilo mejorado para el encabezado */
+.chat-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.chat-header p {
+    font-size: 14px;
+    margin-top: 5px;
+    opacity: 0.8;
+}
+
+.chat-container {
+    padding-top: 50px; /* Ajusta la altura según tu encabezado */
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Oculta la barra de desplazamiento vertical */
+    margin-top: 0; /* Agrega esta línea para eliminar el margen superior */
+}
+
+.chat-message {
+    max-width: 70%;
+    border-radius: 10px;
+    margin: 10px;
+    word-wrap: break-word;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.096); /* Sombra sutil */
+    margin: 10px 0; /* Espacio entre los mensajes */
+    padding: 10px; /* Espacio interno en los mensajes */
+}
+
+.bot {
+    background-color: rgb(255, 255, 255);
+    align-self: flex-start;
+}
+
+.user {
+    background-color: #d9fdd3;
+    color: #000000;
+    align-self: flex-end;
+}
+
+.chat-input {
+    padding: 15px;
+    background-color: #fff;
+    border-top: 1px solid #d8dce0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#enviar-icon {
+    font-size: 24px; /* Tamaño aumentado del icono */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
+    color: rgb(137, 149, 204); /* Color del icono (azul) */
+    transition: opacity 0.2s; /* Efecto de transición de opacidad */
+}
+
+#enviar-icon:hover {
+    opacity: 0.3; /* Opacidad reducida al pasar el mouse sobre el icono */
+}
+
+
+/* Estilo para el campo de entrada de mensajes cuando está enfocado (focus) */
+input[type="text"]:focus {
+    outline: none; /* Elimina el borde de enfoque (borde negro) */
+    /* Agrega otros estilos personalizados si es necesario */
+}
+
+/* Estilos para el lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+.lightbox-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+    max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.proyecto-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0; /* Agregado para ajustar el margen del contenedor */
+    max-width: 80%; /* Ajusta el ancho máximo del contenedor al 80% del contenedor padre */
+    margin: 0 auto; /* Centra el contenedor horizontalmente en el contenedor padre */
+}
+
+
+
+
+
+

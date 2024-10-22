@@ -1,193 +1,755 @@
-body {
-    font-family: Arial, sans-serif;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #eff0f4;
+}
+
+html {
+    scroll-behavior: smooth; /* Esto asegura que el desplazamiento básico sea suave */
+}
+
+/*main {*/
+    /*scrollbar-width: none; /* Oculta la barra en Firefox */
+    /*scroll-snap-type: y mandatory; /* Activa el scroll snap vertical */
+    /*overflow-y: scroll; /* Habilita el scroll vertical */
+    /*height: 100vh; /* Asegúrate de que el contenedor principal ocupe la altura de la ventana */
+/*} */
+
+body {
+    font-family: 'Poppins', sans-serif; /* Cambiado a Poppins */
+    margin: 40px;
+    scroll-snap-type: y mandatory; /* Activa el ajuste de scroll en eje Y */
+    overflow-y: scroll; /* Asegura que se pueda hacer scroll vertical */
+    height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+    cursor: crosshair; /* Cambia el cursor a una cruz con flechas */
+}
+
+
+::selection {
+    background-color: #000000; /* Color de fondo al seleccionar */
+    color: rgb(255, 255, 255); /* Color del texto al seleccionar */
+}
+
+header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    position: relative; /* Añadido para posicionar el fondo de manera relativa */
+    position: fixed;
+    top: 40px; /* Ajuste para que respete el margen superior */
+    left: 40px; /* Ajuste para el margen izquierdo */
+    right: 40px; /* Ajuste para el margen derecho */
+    background-color: transparent; /* Cambiado a transparente */
+    padding: 10px 20px;
+    z-index: 1000;
 }
 
-.chat-header p{
-color: #000000;
-
+.logo {
+    font-size: 28px; /* Tamaño del logo */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-left: -20px;
+    position: relative; /* Necesario para agregar los símbolos */
+    transition: color 0.3s ease; /* Transición suave para el color */
 }
-.chat {
-    background-image: url('../Img/background.jpg'); /* Reemplaza con la ruta de tu imagen de fondo o la URL */
-    background-size:30%; /* Ajusta el tamaño de la imagen para cubrir toda la pantalla */
-    /* background-repeat: no-repeat; /* Evita la repetición de la imagen */
-    background-attachment: fixed; /* Mantiene la imagen en su lugar al desplazarte por la página */
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    background-color: #ffffff;
+
+.logo::before,
+.logo::after {
+    content: ''; /* Inicialmente vacío, solo visible al hacer hover */
+    position: absolute;
+    opacity: 0; /* Los corchetes están ocultos por defecto */
+    transition: opacity 0.3s ease; /* Suaviza la transición de aparición */
+}
+
+.logo::after {
+    content: ' []';
+    right: -30px; /* Posiciona el corchete a la derecha */
+    opacity: 0; /* Invisible inicialmente */
+}
+
+.logo:hover {
+    color: red; /* Cambia el color a rojo al hacer hover */
+}
+
+.logo:hover::before,
+.logo:hover::after {
+    opacity: 1; /* Muestra los corchetes al hacer hover */
+}
+
+
+.menu ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    text-decoration: none; /* Eliminar subrayado */
+    font-size: 100%; /* Tamaño del menú más pequeño */
+    font-weight: 100; /* Más ligero */
+    color: rgba(0, 0, 0, 0.5); /* Color gris claro */
+}
+
+
+.container {
+    display: flex;
+    position: relative;
+    margin-top: 80px; /* Ajuste del margen superior para alinear con el margen de body */
+}
+
+.info-column {
+    flex: 1;
+    margin: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar el contenido de la columna */
+}
+
+section {
+    scroll-snap-align: start; /* Cada sección se ajustará cuando llegue al principio */
+    min-height: 100vh; /* Cada sección ocupa toda la pantalla */
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+
+
+.social-btn {
+    position: relative;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+    text-decoration: none;
+    margin: 10px 0;
+    padding-left: 25px;
+    transition: color 0.3s ease;
+}
+
+.social-btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.social-btn:hover {
+    color: black;
+}
+
+.social-btn:hover::before, .social-btn.active::before {
+    background-color: black;
+    border-color: black;
+}
+
+.social-btn.active {
+    color: black;
+}
+
+
+
+
+
+
+/* Estilo para el contenedor de la línea de scroll y el texto */
+.scroll-down {
+    position: fixed; /* Fija el elemento en la pantalla */
+    bottom: 40px; /* Justo en la parte inferior, con un margen de 40px desde el borde */
+    left: 40px; /* Alineado con las líneas horizontales */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Suaviza la aparición/desaparición */
+    opacity: 1; /* Visible por defecto */
+    visibility: visible; /* Visible por defecto */
+}
+
+.scroll-down.hidden {
+    opacity: 0; /* Invisible */
+    visibility: hidden; /* No ocupa espacio en la página */
+}
+
+/* Estilo para el cuadrado con borde negro y fondo transparente */
+.scroll-down .square {
+    width: 10px; /* Ancho del cuadrado */
+    height: 30px; /* Altura del cuadrado, más corto */
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid black; /* Borde negro */
+    position: relative; /* Posiciona el contenido dentro del cuadrado */
+    overflow: hidden; /* Oculta cualquier contenido fuera del cuadrado */
+}
+
+/* Estilo para la línea horizontal que se animará */
+.scroll-down .moving-line {
+    width: 100%; /* Ancho completo del cuadrado */
+    height: 2px; /* Grosor de la línea */
+    background-color: black; /* Color de la línea */
+    position: absolute; /* Posiciona la línea en relación al cuadrado */
+    bottom: 0; /* Inicialmente en la parte inferior */
+    animation: moveLine 1s infinite alternate; /* Animación para mover la línea */
+}
+
+/* Animación para la línea que sube y baja */
+@keyframes moveLine {
+    0% {
+        transform: translateY(0); /* Comienza en la parte inferior */
+    }
+    100% {
+        transform: translateY(-25px); /* Sube 25px */
+    }
+}
+
+/* Estilo para el texto en vertical */
+.scroll-down span {
+    font-family: 'Poppins', sans-serif; /* Fuente para el texto */
+    font-weight: 300; /* Ligero */
+    font-size: 1rem; /* Tamaño más pequeño */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    color: #888888; /* Color gris */
+    writing-mode: vertical-rl; /* Gira el texto para que sea vertical */
+    transform: rotate(180deg); /* Lo rota para que quede en la posición correcta */
+    margin-bottom: 8px; /* Añade espacio entre el texto y el cuadrado */
+}
+
+
+
+
+
+
+
+
+
+
+.social-buttons {
+    position: fixed;
+    top: 50%;
+    right: 40px; /* Ajuste para el margen derecho */
+    transform: translateY(-50%);
+}
+
+.social-buttons a {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif; /* Misma tipografía que los botones del menú */
+    text-decoration: none; /* Eliminar subrayado */
+    font-weight: 100; /* Más ligero */
+    color: rgba(0, 0, 0, 0.5); /* Color gris claro, ajusta la opacidad si es necesario */
+}
+
+
+
+.line-buttons {
+    position: fixed;
+    top: 50%;
+    left: 40px; /* Ajuste para el margen izquierdo */
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
 }
 
-.avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%; /* Forma redonda */
-    margin-right: 15px; /* Espacio entre la imagen y el texto */
-    margin-left: 20px; /* Espacio entre la imagen y el lado izquierdo */
-    transition: opacity 0.3s, cursor 0.3s; /* Agrega una transición suave para la opacidad y el cursor */
+.line {
+    width: 25px; /* Longitud original de la línea */
+    height: 2px;
+    background-color: gray;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: width 0.3s, background-color 0.3s;
+    position: relative;
+}
+/* Área de clic invisible más grande */
+.line::before {
+    content: '';
+    position: absolute;
+    top: -5px; /* Aumenta el área de clic arriba */
+    left: -10px; /* Aumenta el área de clic a la izquierda */
+    right: -10px; /* Aumenta el área de clic a la derecha */
+    bottom: -5px; /* Aumenta el área de clic abajo */
+    cursor: pointer;
 }
 
-/* Estilo cuando el cursor está sobre la imagen */
-.avatar:hover {
-    cursor: pointer; /* Cambia el cursor a una mano */
-    opacity: 0.7; /* Cambia la opacidad al 70% al pasar el cursor */
+/* Línea activa (al hacer clic) */
+.line.active {
+    width: 35px; /* Se alarga, pero no tanto */
+    background-color: black;
 }
 
-.header-info {
-    margin-top: 13px;
+/* Diseño para el perfil */
+.perfil-container {
     display: flex;
-    flex-direction: column; /* Para alinear elementos verticalmente */
-    align-items: flex-start; /* Para alinear el texto a la izquierda */
+    align-items: center;
+    justify-content: center; /* Centrado del contenido */
+    gap: 60px; /* Aumenté el espacio entre el texto y la imagen */
+    
+    margin-bottom: 40px; /* Margen inferior para separación con otras secciones */
 }
 
-#last-connection {
-    font-size: 14px;
-    color: #888; /* Color de texto gris para la última conexión */
+.perfil-texto {
+    flex: 1;
+    max-width: 500px; /* Limitar la anchura del texto para que quede ajustado */
+    margin-top: 20px; /* Espaciado adicional entre la imagen y el texto */
+    line-height: 1.6; /* Aumenta el interlineado entre líneas de texto */
 }
 
-.chat-header {
-    background-color: rgb(255, 255, 255);
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-    display: flex; /* Agregado para alinear elementos */
-    align-items: center; /* Agregado para alinear elementos */
+.perfil-texto h2 {
+    margin: 0; /* Elimina el margen por defecto */
+    font-size: 2rem; /* Ajusta el tamaño de la fuente según tus preferencias */
+    font-weight: 600; /* Bold para el título */
+}
+
+.perfil-texto h3 {
+    margin: 0; /* Elimina el margen por defecto */
+    font-size: 18px; /* Tamaño más pequeño para el diseño gráfico */
+    line-height: 1.4; /* Ajusta el interlineado si es necesario */
+    color: #000000; /* Cambia el color a negro */
+    font-family: 'Poppins', sans-serif; /* Mantiene la fuente Poppins */
+    font-weight: 400; /* Grosor intermedio para el subtítulo */
+}
+
+.perfil-texto p {
+    margin-top: 20px; /* Espaciado adicional entre el encabezado y el párrafo */
+    line-height: 1.6; /* Aumenta el interlineado para mayor separación */
+    font-family: 'Poppins', sans-serif; /* Cambia a Poppins */
+    font-weight: 100; /* Más ligero */
+    color: rgba(0, 0, 0, 0.5); /* Color gris claro */
+}
+
+
+.perfil-imagen {
+    position: relative; /* Para el posicionamiento del cuadrado */
+}
+
+.perfil-imagen img {
+    width: 500px; /* Tamaño de la imagen */
+    height: 500px; /* Mantiene la forma cuadrada */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+ 
+}
+
+.perfil-imagen .shadow {
+    position: absolute;
+    width: 500px; /* Igual al ancho de la imagen */
+    height: 500px; /* Igual a la altura de la imagen */
+    background-color: rgba(220, 220, 220, 0.7); /* Color gris más claro */
+    top: 5%; /* Ajuste relativo a la imagen */
+    left: 5%; /* Ajuste relativo a la imagen */
+    transform: translate(15%, 15%); /* Desplazar hacia abajo y a la izquierda */
+    z-index: -1; /* Envía el cuadrado detrás de la imagen */
+
+}
+
+.menu a.active {
+    color: black; /* Color del botón seleccionado */
+    font-weight: bold; /* Aumenta el peso del botón seleccionado */
+    position: relative; /* Necesario para posicionar la línea roja */
+}
+
+.menu a.active::after {
+    content: '';
+    position: absolute;
+    width: 100%; /* La línea será tan ancha como la palabra */
+    height: 2px; /* Grosor de la línea roja */
+    background-color: red; /* Color de la línea roja */
+    bottom: -5px; /* Posición de la línea debajo del texto */
+    left: 0; /* Alinea la línea al inicio de la palabra */
+}
+
+.download-btn {
+    position: relative; /* Necesario para el pseudo-elemento */
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300; /* Ligero para un estilo limpio */
+    font-size: 16px;
+    color: black; /* Color inicial del texto */
+    text-decoration: none; /* Eliminar subrayado */
+    margin-top: 20px; /* Espacio entre el texto y el botón */
+    border: 2px solid black; /* Borde negro */
+    background-color: transparent; /* Fondo transparente */
+    padding: 10px 15px; /* Espaciado interno del botón */
+    border-radius: 0; /* Esquinas cuadradas */
+    overflow: hidden; /* Para ocultar el pseudo-elemento fuera del botón */
+    transition: color 0.3s ease; /* Transición para el color del texto */
+    text-align: center; /* Asegura que el texto esté centrado */
+    width: auto; /* Ajustar el ancho según el contenido */
+}
+
+.download-btn::before {
+    content: ""; /* Pseudo-elemento vacío */
+    position: absolute; /* Posicionarlo en relación al botón */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    background-color: black; /* Color de fondo negro */
+    transform: translateX(-100%); /* Comenzar fuera de la vista a la izquierda */
+    transition: transform 0.4s ease; /* Transición suave */
+    z-index: 0; /* Colocar detrás del texto */
+}
+
+.download-btn:hover::before {
+    transform: translateX(0); /* Llenar de izquierda a derecha */
+}
+
+.download-btn:hover {
+    color: transparent; /* Hacer el color del texto transparente */
+}
+
+.download-btn:hover::after {
+    content: attr(data-text); /* Usar el texto del botón */
+    position: absolute; /* Posicionarlo encima */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    color: white; /* Color blanco para el texto */
+    transition: opacity 0.4s ease; /* Transición suave para el texto */
+    opacity: 0; /* Comenzar invisible */
+    z-index: 2; /* Asegúrate de que esté encima */
+    display: flex; /* Usar flexbox para centrar */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.download-btn:hover::after {
+    opacity: 1; /* Hacer visible el texto blanco al pasar el ratón */
+}
+
+
+
+
+
+.experience-container {
+    position: fixed; /* Mantiene el contenedor fijo en la parte inferior */
+    bottom: 0; /* Ajusta a 0 para tocar el límite inferior de la pantalla */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Compensa el desplazamiento del 50% */
+    text-align: center; /* Centra el texto */
+}
+
+.experience-container h2 {
+    margin-bottom: 35px; /* Espacio entre el texto y la línea vertical */
+    font-family: 'Poppins', sans-serif; /* Tipografía Poppins */
+    font-weight: 300; /* Ligero */
+    font-size: 1em; /* Tamaño más pequeño */
+    color: #888888; /* Color gris */
+  
+    position: relative; /* Colocación relativa */
+    z-index: 1; /* Asegura que el título esté encima de la línea */
+    letter-spacing: 2px; /* Espaciado entre letras */
+}
+
+.experience-line {
+    width: 1px; /* Grosor de la línea vertical */
+    height: 30px; /* Ajusta la altura según sea necesario (más corta) */
+    background-color: #C0C0C0; /* Color gris (ajusta este valor al que uses para las líneas de la izquierda) */
+    margin: 0 auto; /* Sin margen entre el texto y la línea */
+    position: absolute; /* Permite la colocación relativa dentro del contenedor */
+    bottom: 0; /* Alinea la línea con la parte inferior del contenedor */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Compensa el desplazamiento del 50% */
+}
+
+
+
+
+/* Estilo del nombre "Ramon Bartomeu" en el perfil */
+#perfil h1 {
+    margin-left: 0; /* El margen puede ajustarse automáticamente con la media query */
+    font-size: 2rem; /* Tamaño de la fuente actual */
+  }
+  
+  /* Estilo del título de la sección de experiencia */
+  .timeline-section h2 {
+    margin-left: 50px; /* Margen izquierdo para pantallas grandes */
+    margin-bottom: 20px; /* Espacio entre cada item */
+    font-size: 2rem; /* Tamaño de la fuente igual */
+    font-weight: bold; /* Mismo peso de la fuente */
+  }
+
+  .timeline-section {
+  padding: 20px;
+  margin: 40px 0;
+}
+
+/* Asegurando que la alineación se mantenga a la izquierda */
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Permite la colocación absoluta de los hijos */
+  margin-left: -10px; /* Ajustado para mover todo más a la izquierda */
+}
+
+/* Alineación de los items de la línea del tiempo */
+.timeline-item {
+    display: flex;
+    align-items: stretch; /* Asegura que todos los elementos dentro del contenedor tengan la misma altura */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-date {
+    font-weight: lighter; /* Mantén el texto en negrita si deseas */
+    font-style: italic; /* Agrega esta línea para poner el texto en cursiva */
+    margin-right: 15px;
+    width: 100px; /* Ajusta según sea necesario */
+    text-align: right;
+    position: relative;
+}
+
+
+
+.timeline-content {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border: 2px solid #ddd;
+ 
+  width: calc(100% - 20px); /* Ajustado para que el contenido ocupe más espacio */
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.timeline-content ul {
+  list-style-type: square;
+  margin-left: 20px;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  background-color: #ffffff;
+}
+
+  
+.timeline-content h3 strong {
+    font-weight: bold;
+  }
+  
+  .timeline-content h3 span {
+    font-weight: normal;
+  }
+  
+
+
+  
+
+
+
+  
+
+/* Sección de Educación */
+.education-section {
+    padding: 20px;
+    margin: 40px 0;
+    margin-left: 0; /* Asegúrate de que no haya margen a la izquierda */
+}
+/* Estilo del título de Educación */
+.education-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px; /* Margen inferior para separación */
+    margin-top: 0; /* Asegúrate de que no haya margen superior que empuje el título hacia abajo */
+    text-align: left;
+    margin-left: -18px; /* Ajusta este valor para mover el título más a la izquierda */
+}
+/* Contenedor principal de Educación y Habilidades */
+.education-container {
+    display: flex;
+    justify-content: flex-start; /* Alinea los elementos a la izquierda */
+    gap: 165px; /* Espacio entre las columnas de educación y habilidades */
+}
+
+/* Alinea los títulos en la parte superior */
+.titles-container {
+    display: flex; /* Activa flexbox */
+    justify-content: space-between; /* Espacio entre los títulos */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+/* Alineación de la columna de educación */
+.education-column {
+    width: 100%; /* Ocupa la mitad del espacio disponible */
+    padding-left: 0; /* Elimina cualquier padding a la izquierda */
+    margin-left: -20px; /* Elimina el margen izquierdo para moverlo más a la izquierda */
     
 }
 
-.chat-header h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #000000af;
+
+/* Contenedor de cada item de educación */
+.education-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px; /* Aumentar el margen inferior para más separación */
 }
 
-.chat-header p {
-    font-size: 14px;
-    margin-top: 5px;
-    opacity: 0.8;
+/* Estilo de los años en Educación */
+.education-year {
+    font-weight: lighter;
+    font-style: italic; /* Poner en cursiva */
+    margin-right: 30px;
+    width: 100px;
+    text-align: left;
+}
+
+/* Contenido de cada item de educación */
+.education-content {
+    padding: 10px 20px;
+    border: 2px solid #ddd; /* Define el borde inicial */
+    width: 110%; /* Ajustar para ocupar más espacio */
+    transition: background-color 0.3s ease, width 0.3s ease, color 0.3s ease; /* Efecto suave para color, tamaño y texto */
+    background-color: #ffffff; /* Color inicial del rectángulo */
+    color: #000; /* Color inicial del texto */
+    margin-left: -60px; /* Asegura que el contenido no tenga margen izquierdo */
+}
+
+/* Efecto hover */
+.education-item:hover .education-content {
+    background-color: rgba(233, 233, 233, 0.527); /* Cambia al color rojo */
+    border-color: #000000; /* Cambia el color del borde al rojo */
+    color: #000000; /* Cambia el color del texto a blanco */
+}
+
+/* Alineación de la columna de habilidades */
+.skills-column {
+    width: 50%; /* Ocupa la mitad del espacio disponible */
+    text-align: left; /* Alineación a la izquierda */
+}
+
+.skills-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: -70px; 
+}
+
+.skills-list {
+    list-style-type: none; /* Sin viñetas en la lista */
+    padding: 0;
+}
+
+.skills-list li {
+    display: flex; /* Flexbox para alinear los elementos */
+    align-items: center; /* Alinea verticalmente el texto y los cuadros */
+    justify-content: space-between; /* Distribuye el espacio entre el texto y el porcentaje */
+    margin-bottom: 15px;
+}
+
+.skill-level {
+    display: flex; /* Flexbox para los niveles de habilidad */
+    align-items: center; /* Alinea verticalmente los niveles */
+    justify-content: flex-end; /* Justifica los cuadros a la derecha */
+    margin-left: auto; /* Empuja los niveles hacia la derecha */
+    margin-right: 5px; /* Espacio entre los cuadros y el porcentaje */
+}
+
+.level {
+    width: 20px; /* Ancho de cada cuadro */
+    height: 20px; /* Altura de cada cuadro */
+    border: 1px solid #0000002d; /* Borde negro de 2px */
+    background-color: #ffffff; /* Fondo gris claro */
+    margin-left: 3px; /* Espacio entre los cuadros */
+}
+
+.level.filled {
+    background-color: #ddd; /* Color de relleno */
+}
+
+.skill-percentage {
+    margin-left: 10px; /* Espacio entre el cuadro y el porcentaje */
+    font-weight: light; /* Negrita para el porcentaje */
+    text-align: right; /* Alinea el texto a la derecha */
+    width: 50px; /* Ajusta el ancho si es necesario */
 }
 
 
-/* Estilo mejorado para el encabezado */
-.chat-header h1 {
-    margin: 0;
-    font-size: 24px;
+.skills-separator {
+    width: 100%;
+    height: 2px; /* Ajusta el grosor de la línea */
+    background-color: #000000; /* Color negro */
+    margin: 20px 0; /* Ajusta el espacio entre la línea y los elementos */
+    border: none; /* Asegura que no haya bordes visibles */
 }
 
-.chat-header p {
-    font-size: 14px;
-    margin-top: 5px;
-    opacity: 0.8;
+
+
+
+
+
+
+.projects-section {
+    margin-left: 40px; /* Ajusta la posición de la sección hacia la izquierda */
 }
 
-.chat-container {
-    padding-top: 50px; /* Ajusta la altura según tu encabezado */
-    flex: 1;
-    padding: 15px;
-    overflow-y: auto;
+.projects-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: -25px; /* Alinea el título con los cuadrados de abajo */
+    margin-bottom: -40px; /* Espacio debajo del título */
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los cuadrados se distribuyan en varias líneas */
+    justify-content: space-between; /* Distribuye los cuadrados con espacio entre ellos */
+    margin-left: -90px; /* Alinea los cuadrados con el título */
+}
+
+.project-card {
+    background-color: #ffffff; /* Color de fondo blanco */
+    border: 2px solid #000000; /* Borde negro */
+    box-shadow: 50px 50px 0px rgba(220, 220, 220, 0.7); /* Sombra gris suave, sólida */
+    width: 250px; /* Ancho del cuadrado */
+    height: 250px; /* Altura del cuadrado */
+    margin: 65px; /* Espacio aumentado entre los cuadrados */
+    padding: 20px; /* Espaciado interno */
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en las dimensiones */
+    overflow: hidden; /* Oculta el contenido desbordante */
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Oculta la barra de desplazamiento vertical */
-    margin-top: 0; /* Agrega esta línea para eliminar el margen superior */
+    justify-content: space-between; /* Distribuye el contenido dentro del cuadrado */
 }
 
-.chat-message {
-    max-width: 70%;
-    border-radius: 10px;
-    margin: 10px;
-    word-wrap: break-word;
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.096); /* Sombra sutil */
-    margin: 10px 0; /* Espacio entre los mensajes */
-    padding: 10px; /* Espacio interno en los mensajes */
+.project-card h3 {
+    font-size: 1.2rem; /* Ajusta el tamaño del título de los proyectos */
+    margin-bottom: 10px; /* Espacio debajo del título */
 }
 
-.bot {
-    background-color: rgb(255, 255, 255);
-    align-self: flex-start;
+.project-card p {
+    font-size: 1rem; /* Tamaño estándar para los lenguajes utilizados */
 }
 
-.user {
-    background-color: #d9fdd3;
-    color: #000000;
-    align-self: flex-end;
+.project-button {
+    display: inline-block;
+    background-color: transparent; /* Fondo transparente para el botón */
+    color: #000; /* Color negro para la flecha */
+    font-size: 1.5rem; /* Tamaño de la flecha */
+    text-decoration: none; /* Elimina el subrayado */
+    position: relative; /* Posición relativa para animación */
+    transition: all 0.3s ease; /* Transición suave */
+    font-weight: 900;
 }
 
-.chat-input {
-    padding: 15px;
-    background-color: #fff;
-    border-top: 1px solid #d8dce0;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    display: flex;
-    align-items: center;
-}
-
-input[type="text"] {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-#enviar-icon {
-    font-size: 24px; /* Tamaño aumentado del icono */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
-    color: rgb(137, 149, 204); /* Color del icono (azul) */
-    transition: opacity 0.2s; /* Efecto de transición de opacidad */
-}
-
-#enviar-icon:hover {
-    opacity: 0.3; /* Opacidad reducida al pasar el mouse sobre el icono */
-}
-
-
-/* Estilo para el campo de entrada de mensajes cuando está enfocado (focus) */
-input[type="text"]:focus {
-    outline: none; /* Elimina el borde de enfoque (borde negro) */
-    /* Agrega otros estilos personalizados si es necesario */
-}
-
-/* Estilos para el lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
+.project-button::after {
+    content: "→"; /* Flecha apuntando a la derecha */
+    position: relative;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 2;
+    transition: all 0.3s ease; /* Transición para mover la flecha */
 }
 
-.lightbox-image {
-    display: block;
-    margin: 0 auto;
-    max-width: 80%;
-    max-height: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.proyecto-container {
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 10px 0; /* Agregado para ajustar el margen del contenedor */
-    max-width: 80%; /* Ajusta el ancho máximo del contenedor al 80% del contenedor padre */
-    margin: 0 auto; /* Centra el contenedor horizontalmente en el contenedor padre */
+.project-button:hover::after {
+    left: 30px; /* Mueve la flecha hacia la derecha al pasar el ratón */
 }
 
 
@@ -195,3 +757,424 @@ input[type="text"]:focus {
 
 
 
+
+
+.contact-section {
+    margin-left: -24%; /* Ajusta la posición hacia la izquierda */
+    text-align: left; /* Alinea el contenido a la izquierda */
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px; /* Aumenta el espacio debajo del título */
+}
+
+.contact-section p {
+    font-size: 1rem;
+    margin-bottom: 20px; /* Espacio debajo del párrafo */
+}
+
+.email {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 40px !important; /* Aumenta el espacio entre el correo y los botones */
+    text-decoration: underline; /* Añade una línea debajo del correo */
+    text-decoration-color: #bbbbbb; /* Color de la línea debajo del correo */
+    text-decoration-thickness: 2px; /* Grosor de la línea */
+}
+
+
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se distribuyan en varias líneas si es necesario */
+    gap: 15px; /* Espacio entre los botones */
+}
+
+.social-button {
+    background-color: #000; /* Color de fondo negro */
+    color: #fff; /* Color del texto blanco */
+    padding: 10px 15px; /* Espaciado interno del botón */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    border: 2px solid #000; /* Borde negro */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+.social-button:hover {
+    background-color: #555; /* Cambia el color de fondo al pasar el ratón */
+    transform: translateY(-5px); /* Eleva el botón ligeramente al pasar el ratón */
+}
+
+
+
+
+
+.menu-popup {
+    display: none; /* Inicialmente oculto */
+}
+
+/* Cuando se activa, mostrar el menú */
+.menu-popup.active {
+    display: flex; /* Mostrar menú cuando está activo */
+    /* Otros estilos que desees */
+}
+
+
+
+
+
+
+
+/* Ajustes en la versión móvil */
+@media (max-width: 480px) {
+    body {
+        margin: 20px; /* Ajuste para móviles */
+    }
+
+    header {
+
+        top: 0; /* Ajusta la posición en la parte superior */
+        left: 0; /* Alinea el encabezado a la izquierda */
+        right: 0; /* Alinea el encabezado a la derecha */
+        z-index: 1000; /* Asegura que el encabezado esté por encima de otros elementos */
+        background-color: rgb(0, 0, 0); /* Añade un color de fondo para que no se mezcle con el contenido */
+        padding: 15px; /* Espaciado del encabezado */
+    }
+
+    .container {
+        flex-direction: column; /* Cambia a columna en dispositivos móviles */
+        padding: 10px; /* Ajusta el padding */
+    }
+
+
+
+    .logo {
+        margin-left: 20px; /* Alinea el logo a la derecha */
+        color: #ffffff;
+    
+    }
+    
+    #perfil {
+        margin-top: 50px; /* Aumenta el margen superior según sea necesario */
+    }
+
+
+    .menu {
+        display: none; /* Ocultar la barra de menú en móviles */
+    }
+
+    .hamburger-menu {
+        display: flex; /* Mostrar el botón de hamburguesa */
+        flex-direction: column; /* Colocar las líneas en columna */
+        cursor: pointer; /* Indica que es clickeable */
+        position: absolute; /* Para posicionarlo correctamente */
+        top: 20px; /* Ajusta la posición vertical */
+        right: 40px; /* Ajusta la posición horizontal para moverlo más a la izquierda */
+    }
+
+    .hamburger-line {
+        width: 30px; /* Ancho de cada línea */
+        height: 3px; /* Alto de cada línea */
+        background-color: #ffffff; /* Color de las líneas */
+        margin: 4px 0; /* Espaciado entre líneas */
+    }
+    .menu-item a {
+        color: white; /* Cambia el color del texto a blanco */
+        text-decoration: none; /* Elimina el subrayado */
+        padding-left: 20px; /* Espacio a la izquierda para moverlo hacia la derecha */
+    }
+    
+    .menu-popup {
+        position: fixed; /* Fijar en pantalla */
+        top: 0; /* Iniciar en la parte superior */
+        left: 0; /* Iniciar a la izquierda */
+        width: 100%; /* Ancho completo */
+        height: 100%; /* Altura completa */
+        background-color: rgb(0, 0, 0); /* Fondo semitransparente */
+        display: none; /* Inicialmente oculto */
+        flex-direction: column; /* Colocar elementos en columna */
+        align-items: flex-start; /* Alinear a la izquierda */
+        justify-content: center; /* Centrar verticalmente */
+        padding: 20px; /* Espaciado interno */
+    }
+
+    .menu-popup.active {
+        display: flex; /* Mostrar menú cuando está activo */
+    }
+
+    .menu-item {
+        font-size: 1.5rem; /* Tamaño de texto */
+        color: white; /* Color del texto */
+        margin: 20px 0; /* Espaciado entre elementos */
+        text-align: left; /* Alinear texto a la izquierda */
+    }
+
+    .close-button {
+        position: absolute; /* Posición absoluta */
+        top: 13px; /* Espacio desde el borde superior (igual que el botón de hamburguesa) */
+        right: 42px; /* Espacio desde el borde derecho (igual que el botón de hamburguesa) */
+        font-size: 2rem; /* Tamaño del botón */
+        color: white; /* Color del texto */
+        cursor: pointer; /* Indica que se puede hacer clic */
+    }
+    
+
+
+
+
+
+
+
+
+
+    .scroll-down {
+        display: none; /* Oculta el contenedor en pantallas pequeñas */
+    }
+
+    
+
+    .perfil-container {
+        flex-direction: column; /* Coloca elementos en columna en móviles */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+    }
+
+    .perfil-imagen img {
+        width: 250px; /* Tamaño más pequeño en pantallas móviles */
+        height: 250px; /* Mantiene la forma cuadrada */
+    }
+
+    .perfil-imagen .shadow {
+        width: 250px; /* Igual al ancho de la imagen */
+        height: 250px; /* Igual a la altura de la imagen */
+        top: 5%; /* Ajuste relativo a la imagen */
+        left: 5%; /* Ajuste relativo a la imagen */
+        transform: translate(10%, 10%); /* Desplazar hacia abajo y a la izquierda */
+    }
+
+    /* Títulos en móviles */
+    #perfil h1,
+    .timeline-section h2 {
+        margin-left: 0; /* Eliminar margen negativo en pantallas más pequeñas */
+        font-size: 1.8rem; /* Reducir ligeramente el tamaño de fuente */
+        text-align: left; /* Alinear el texto a la izquierda */
+    }
+
+    .projects-section h2 {
+        margin-top: 30px; /* Ajusta el espacio superior del título en móviles */
+        margin-left: -40px; /* Alinea el título a la izquierda */
+        margin-bottom: 10px; /* Ajusta el margen inferior */
+        text-align: left; /* Alinea el texto del título a la izquierda */
+    }
+
+    .projects-container {
+        margin-left: -40px; /* Alinea mejor los cuadrados en móviles */
+        justify-content: left; /* Alinea los cuadrados a la izquierda */
+    }
+
+    .project-card {
+        margin: 20px 0; /* Ajuste del espacio entre los cuadrados para dispositivos móviles */
+        width: 200px; /* Reduce el tamaño del cuadrado para pantallas pequeñas */
+        height: 200px; /* Ajusta también la altura */
+    }
+
+    /* Ocultar líneas horizontales en móviles */
+    .line-buttons { 
+        display: none; /* Ocultar líneas en la versión móvil */
+    }
+
+    /* Ocultar la línea vertical y el texto "Funcionalidad y Estética" */
+    .experience-line {
+        display: none; /* Ocultar la línea en dispositivos móviles */
+    }
+
+    .experience-container {
+        display: none; /* Ocultar el contenedor en dispositivos móviles */
+    }
+
+    /* Ajustes en las secciones de experiencia y educación */
+    .experience-container, .education-section {
+        margin-left: 0; /* Elimina margen en móviles */
+        padding: 0; /* Elimina padding innecesario */
+    }
+
+
+
+
+
+
+
+ /* Estilo del título de la sección de experiencia */
+ .timeline-section h2 {
+    margin-left: -21px; /* Elimina el margen izquierdo para centrar el título en móviles */
+    margin-bottom: 15px; /* Disminuye el espacio entre el título y los elementos */
+    font-size: 2rem; /* Reduce el tamaño de la fuente para mejor ajuste en pantallas pequeñas */
+    text-align: left; /* Alinea el título a la izquierda */
+}
+
+/* Contenedor principal de la línea de tiempo */
+.timeline-container {
+    margin-left: 0; /* Elimina el margen izquierdo para que el contenido no quede fuera de la pantalla */
+    padding: 0 10px; /* Agrega un pequeño padding a los lados para darle espacio al contenido */
+}
+
+/* Alineación de los items de la línea del tiempo */
+.timeline-item {
+    margin-bottom: 15px; /* Reduce el espacio entre los elementos en móviles */
+    flex-direction: column; /* En móvil, los items se colocan uno debajo del otro */
+}
+
+.timeline-date {
+    font-weight: lighter; 
+    font-style: italic; 
+    margin-right: 15px; 
+    width: 100px; 
+    text-align: right; 
+    position: relative;
+    margin-left: -85px; /* Aumenta este valor para moverlo más a la izquierda */
+    margin-bottom: 8px; /* Aumenta este valor para moverlo más a la izquierda */
+}
+
+
+/* Ajustes en el contenido de la experiencia */
+.timeline-content {
+    width: 120%; /* Asegura que el contenido ocupe todo el ancho disponible, menos márgenes */
+    padding: 15px; /* Reduce el padding interno */
+    font-size: 1rem; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+    margin-left: -20px; /* Elimina el margen izquierdo para centrar el título en móviles */
+}
+
+/* Ajustes en el título dentro de cada item de la línea de tiempo */
+.timeline-content h3 {
+    font-size: 1.1rem; /* Disminuye el tamaño de los subtítulos */
+}
+
+/* Ajustes para los items de la línea de tiempo */
+.timeline-item {
+    align-items: flex-start; /* Alinea los elementos al inicio */
+    width: 100%; /* Asegura que los items ocupen el ancho completo */
+}
+
+/* Asegura que los items de la línea de tiempo sean más anchos */
+.timeline-content {
+    border-radius: 5px; /* Agrega bordes redondeados para mejor estética */
+    border: 2px solid #ddd; /* Mantiene el borde definido */
+}
+
+
+
+
+
+
+
+
+
+
+
+    /* Ajustes para la sección de Educación */
+    .education-section {
+        padding: 10px; /* Reduce el padding para pantallas más pequeñas */
+        margin: 20px 0;
+        margin-left: 0; /* Asegúrate de que no haya margen a la izquierda */
+    }
+
+    /* Título de Educación */
+    .education-title {
+        font-size: 2rem; /* Mismo tamaño para todos los títulos */
+        font-weight: bold;
+        margin-bottom: 20px;
+
+        text-align: left; /* Asegura que el título esté alineado a la izquierda */
+        margin-left: 0; /* Elimina el margen negativo en móviles */
+    }
+
+    /* Contenedor de Educación y Habilidades en columnas */
+    .education-container {
+        flex-direction: column; /* Cambia el diseño a columnas */
+        gap: 20px; /* Espacio entre secciones */
+    }
+
+    /* Columna de Educación */
+    .education-column {
+        width: 100%; /* Asegura que ocupe todo el ancho */
+        margin-left: 0; /* Elimina margen a la izquierda */
+        padding-left: 0; /* Sin padding a la izquierda */
+    }
+
+    /* Contenedor de cada ítem de educación */
+    .education-item {
+        flex-direction: column; /* Coloca los años y contenido en columnas */
+        align-items: flex-start; /* Alinea a la izquierda */
+        margin-bottom: 20px; /* Reduce el margen inferior */
+    }
+
+    /* Estilo para los años de educación */
+    .education-year {
+        width: 100%; /* Ocupa todo el ancho */
+        margin-right: 0; /* Elimina el margen derecho */
+        margin-bottom: 10px; /* Añade espacio debajo del año */
+        text-align: left; /* Asegura alineación a la izquierda */
+    }
+
+    /* Contenido de cada item de educación */
+    .education-content {
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+        margin-left: 0; /* Elimina margen a la izquierda */
+        padding: 15px; /* Ajusta el padding para dispositivos móviles */
+    }
+
+    /* Columna de Habilidades */
+    .skills-column {
+        width: 100%; /* Asegura que ocupe todo el ancho */
+    }
+
+    /* Título de Habilidades */
+    .skills-title {
+        font-size: 2rem; /* Mismo tamaño para todos los títulos */
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-top: 20px; /* Ajusta el margen superior */
+
+    }
+
+    /* Lista de habilidades en columna */
+    .skills-list {
+        padding: 0;
+    }
+
+    .skills-list li {
+        margin-bottom: 10px; /* Reduce el espacio entre habilidades */
+    }
+
+    .skill-percentage {
+        text-align: left; /* Alinea a la izquierda */
+        width: auto; /* Permite que ocupe más espacio si es necesario */
+    }
+
+    .skills-separator {
+        margin: 15px 0; /* Reduce el espacio vertical */
+    }
+
+  
+  
+  
+  
+  
+  
+    .contact-section {
+        margin-left: 0; /* Elimina margen a la izquierda */
+    }
+
+    .contact-buttons {
+        flex-direction: column; /* Coloca los botones en columna */
+        align-items: flex-start; /* Alinea los botones a la izquierda */
+    }
+
+    .social-button {
+        width: 100%; /* Botones ocupan todo el ancho en móvil */
+        margin-bottom: 10px; /* Espacio entre botones */
+    }
+
+    .social-buttons {
+        display: none; /* Ocultar botones de redes sociales en móvil */
+    }
+}
