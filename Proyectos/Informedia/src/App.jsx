@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { news } from "./newsData";
 
 const DUR_SWIPE = 380;   
@@ -186,6 +187,7 @@ export default function App() {
           </footer>
         </article>
       </div>
+      <SpeedInsights />
     </div>
   );
 }

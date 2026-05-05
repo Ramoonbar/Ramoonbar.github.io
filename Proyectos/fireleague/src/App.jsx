@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // Components
 import Navbar from './components/Navbar';
@@ -51,6 +52,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <SpeedInsights />
     </div>
   );
 }

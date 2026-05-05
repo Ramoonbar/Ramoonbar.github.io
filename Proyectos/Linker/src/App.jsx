@@ -1,4 +1,5 @@
 import React from "react";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import GlassLinkCanvas from "./components/GlassLinkCanvas.jsx";
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
           <p className="subtitle">Web / Graphic Designer</p>
         </div>
       </header>
+      <SpeedInsights />
     </div>
   );
 }
