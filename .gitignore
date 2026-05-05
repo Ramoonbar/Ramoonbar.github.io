@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+*.zip
+*.log
+Proyectos/fireleague/node_modules/
+Proyectos/fireleague/dist/

@@ -1,0 +1,187 @@
+{
+  "translation": {
+    "nav": {
+      "home": "Home",
+      "football": "Football",
+      "livescores": "Live Scores",
+      "standings": "Standings",
+      "scorers": "Top Scorers",
+      "tipsters": "Tipsters",
+      "tools": "Tools",
+      "bookmakers": "Bookmakers",
+      "calculator": "Calculator",
+      "blog": "Blog"
+    },
+    "hero": {
+      "title": "Professional Tipster & Sports Betting Platform",
+      "subtitle": "Follow the most profitable football tipsters with 100% verified stats (Yield, Profit, Win Rate). Analyze value odds, use system calculators, and maximize your bets.",
+      "cta": "Explore Picks",
+      "live": "View Live Scores"
+    },
+    "telegram": {
+      "title": "Join the VIP Live Picks Channel",
+      "subtitle": "Receive fast alerts and value bets directly on your mobile before bookmakers adjust the lines.",
+      "cta": "Join Telegram for Free"
+    },
+    "tipsterMonth": {
+      "title": "Tipster of the Month",
+      "badge": "Elite Analyst",
+      "level": "Premium Level",
+      "quote": "Incredible month. The major leagues have responded perfectly to our statistical Expected Goals (xG) model. The key has been stake discipline."
+    },
+    "testimonials": {
+      "title": "What our users say",
+      "subtitle": "Join thousands of bettors who are already improving their profitability.",
+      "m_text": "Thanks to the quarterly ranking I was able to filter who was really profitable. I've been following Alex for 3 months and I'm in the green. Incredible platform.",
+      "e_text": "The systems calculator is crazy. It saves me a lot of time when making my Lucky 15 and seeing the real profit I'm going to get.",
+      "d_text": "The live statistics are the best I've tried. Being able to see the updated LaLiga standings in real time helps me decide on the live.",
+      "l_text": "Incredible Telegram community, picks pop up instantly. With the blog I've learned to control tilt and my bankroll has improved a lot.",
+      "c_text": "Having the whole bookies ranking and the comparator is vital. I'm no longer fooled by welcome bonuses. 10/10.",
+      "role1": "Premium User",
+      "role2": "Regular Bettor",
+      "role3": "Sports Analyst",
+      "role4": "VIP Member",
+      "role5": "Professional Bettor"
+    },
+    "live": {
+      "title": "Live Matches",
+      "subtitle": "Real-time results and elite statistics.",
+      "noMatches": "No active matches in this competition.",
+      "viewStats": "View Match Statistics",
+      "globalTeamTitle": "Global Team of the Day",
+      "worldLeader": "World Leader",
+      "standings": "Standings",
+      "season": "Season",
+      "showFullTable": "View full table",
+      "hideDetails": "Hide details",
+      "statusLive": "LIVE",
+      "statusFT": "FINISHED"
+    },
+    "scorers": {
+      "title": "Statistics",
+      "subtitle": "Individual performance by competition.",
+      "searchPlaceholder": "Search player or team...",
+      "pos": "POS",
+      "player": "PLAYER",
+      "team": "TEAM",
+      "matches": "MATCHES",
+      "avg": "AVG."
+    },
+    "calculator": {
+      "title": "Multi-System Calculator",
+      "subtitle": "Calculate exact returns for Trixie, Yankee, Heinz and more. Enter your odds and discover your potential profit.",
+      "oddsTitle": "Bet Slip Odds",
+      "placeholder": "Ex: 1.85",
+      "addSelection": "Add Selection",
+      "configTitle": "System Configuration",
+      "stakeLabel": "Stake per Bet (€)",
+      "systemType": "System Type",
+      "systemNote": "Available systems depend on the number of valid selections.",
+      "resultsTitle": "Return Projection",
+      "betsLines": "Betting Lines",
+      "totalStake": "Total Investment",
+      "potentialReturn": "Potential Return",
+      "netProfit": "Net Profit",
+      "formats": {
+        "decimal": "Decimal",
+        "fractional": "Fracc.",
+        "american": "Amer."
+      },
+      "guide": {
+        "title": "How to use our Betting Calculator? (Guide & FAQ)",
+        "h2": "How to use our Betting Calculator? (Beginner's Guide)",
+        "p1": "If you've ever wondered how to calculate winnings for an accumulator or system bet, you're in the right place. Our multi-system calculator is designed so anyone can know how much they'll win.",
+        "stepTitle": "Step by step (Explained for dummies)",
+        "step1": "Enter Odds: Type the odds value for your selections.",
+        "step2": "Define Format: Decimal, Fractional, or American.",
+        "step3": "Set your Stake: The amount you want to invest per line.",
+        "step4": "Choose System: Select your desired bet type.",
+        "step5": "View Projection: That's it! See your total investment and real profit."
+      }
+    },
+    "bookmakers": {
+      "title": "Bookmakers Ranking",
+      "subtitle": "We compare and analyze the best legal houses. Use the filters to find your favorite payment method.",
+      "all": "All",
+      "bizum": "Accept Bizum",
+      "paypal": "PayPal",
+      "crypto": "Cryptocurrencies",
+      "noResults": "No bookmakers found with these criteria.",
+      "bonusLabel": "Welcome Bonus",
+      "paymentLabel": "Payment Methods",
+      "viewBonus": "View Bonus",
+      "payments": {
+        "crypto": "Crypto",
+        "card": "Card"
+      }
+    },
+    "tipsters": {
+      "rankingTitle": "Tipsters Ranking",
+      "rankingSubtitle": "Discover the platform's best analysts, ranked by their performance and verified real profit.",
+      "postPick": "Post Pick",
+      "loginAlert": "You must log in to post a pick.",
+      "filters": {
+        "yield": "Top Yield",
+        "profit": "More Profit",
+        "new": "New"
+      }
+    },
+    "tipsterCard": {
+      "member": "Member",
+      "avgOdds": "Avg Odds",
+      "viewPicks": "View {{count}} Picks"
+    },
+    "tipsterProfile": {
+      "eliteStats": "Elite Statistics",
+      "yield": "Real Yield",
+      "winRate": "Win Rate",
+      "profit": "Total Profit",
+      "picks": "Picks",
+      "recentActivity": "Recent Activity",
+      "recentPicks": "Recent Picks",
+      "market": "Market",
+      "odds": "Odds",
+      "loadMore": "Load more picks",
+      "follow": "Follow"
+    },
+    "blog": {
+      "title": "Blog & News",
+      "subtitle": "Learn from the best analysts. Articles on strategy, bankroll management, and advanced statistical analysis.",
+      "searchPlaceholder": "Search articles...",
+      "readMore": "Read Full Article",
+      "noArticles": "No articles found with these filters.",
+      "categories": {
+        "all": "All",
+        "strategy": "Strategy",
+        "systems": "Systems",
+        "management": "Management",
+        "analysis": "Analysis",
+        "tools": "Tools",
+        "psychology": "Psychology"
+      }
+    },
+    "auth": {
+      "login": "Log In",
+      "logout": "Log Out",
+      "becomeTipster": "Become a Tipster",
+      "myProfile": "View my profile"
+    },
+    "footer": {
+      "help": "Help Center / FAQ",
+      "legal": "Legal Notice",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookies Policy",
+      "terms": "Terms of Service",
+      "rights": "All rights reserved. Gamble responsibly."
+    },
+    "common": {
+      "back": "Back",
+      "yield": "Yield",
+      "profit": "Profit",
+      "winRate": "Win Rate",
+      "picks": "Picks",
+      "follow": "Follow",
+      "language": "Language"
+    }
+  }
+}

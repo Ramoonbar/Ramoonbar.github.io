@@ -1,0 +1,187 @@
+{
+  "translation": {
+    "nav": {
+      "home": "Inicio",
+      "football": "Fútbol",
+      "livescores": "Resultados en Vivo",
+      "standings": "Clasificaciones",
+      "scorers": "Goleadores",
+      "tipsters": "Tipsters",
+      "tools": "Herramientas",
+      "bookmakers": "Casas de Apuestas",
+      "calculator": "Calculadora",
+      "blog": "Blog"
+    },
+    "hero": {
+      "title": "La Plataforma Profesional de Tipsters y Pronósticos Deportivos",
+      "subtitle": "Sigue a los pronosticadores de fútbol más rentables con estadísticas 100% verificadas (Yield, Profit, Win Rate). Analiza cuotas de valor, utiliza calculadoras de sistemas y maximiza tus apuestas.",
+      "cta": "Explorar Pronósticos",
+      "live": "Ver Live Scores"
+    },
+    "telegram": {
+      "title": "Únete al Canal VIP de Pronósticos en Vivo",
+      "subtitle": "Recibe alertas rápidas y cuotas con valor (Valuebets) directamente en tu móvil antes de que las casas de apuestas ajusten la línea.",
+      "cta": "Unirme Gratis a Telegram"
+    },
+    "tipsterMonth": {
+      "title": "Tipster del Mes",
+      "badge": "Analista de Élite",
+      "level": "Nivel Premium",
+      "quote": "Un mes increíble. Las ligas mayores han respondido perfectamente a nuestro modelo estadístico de Expected Goals (xG). La clave ha sido la disciplina en el stake."
+    },
+    "testimonials": {
+      "title": "Lo que dicen nuestros usuarios",
+      "subtitle": "Únete a miles de apostadores que ya están mejorando su rentabilidad.",
+      "m_text": "Gracias al ranking trimestral pude filtrar quién era rentable de verdad. Llevo 3 meses siguiendo a Alex y estoy en verde. Increíble plataforma.",
+      "e_text": "La calculadora de sistemas es una locura. Me ahorra muchísimo tiempo a la hora de hacer mis Lucky 15 y ver el profit real que me voy a llevar.",
+      "d_text": "Las estadísticas en vivo son las mejores que he probado. Poder ver las clasificaciones actualizadas al momento de LaLiga me ayuda a decidir en el live.",
+      "l_text": "Increíble comunidad de Telegram, los pronósticos saltan al momento. Con el blog he aprendido a controlar el tilt y mi bankroll ha mejorado un montón.",
+      "c_text": "Lo de tener todo el ranking de las bookies y el comparador es vital. Ya no me engañan con los bonos de bienvenida. 10/10.",
+      "role1": "Usuario Premium",
+      "role2": "Apostadora habitual",
+      "role3": "Analista Deportivo",
+      "role4": "Miembro VIP",
+      "role5": "Apostador Profesional"
+    },
+    "live": {
+      "title": "Partidos en Vivo",
+      "subtitle": "Resultados en tiempo real y estadísticas de élite.",
+      "noMatches": "No hay partidos activos en esta competición.",
+      "viewStats": "Ver Estadísticas del Partido",
+      "globalTeamTitle": "Equipo Global del Día",
+      "worldLeader": "Líder Mundial",
+      "standings": "Clasificaciones",
+      "season": "Temporada",
+      "showFullTable": "Ver tabla completa",
+      "hideDetails": "Ocultar detalles",
+      "statusLive": "EN VIVO",
+      "statusFT": "FINALIZADO"
+    },
+    "scorers": {
+      "title": "Estadísticas",
+      "subtitle": "Rendimiento individual por competiciones.",
+      "searchPlaceholder": "Buscar jugador o equipo...",
+      "pos": "POS",
+      "player": "JUGADOR",
+      "team": "EQUIPO",
+      "matches": "PARTIDOS",
+      "avg": "PROM."
+    },
+    "calculator": {
+      "title": "Calculadora Multisistema",
+      "subtitle": "Calcula los retornos exactos para Trixie, Yankee, Heinz y más. Introduce tus cuotas y descubre tu profit potencial.",
+      "oddsTitle": "Cuotas del Boleto",
+      "placeholder": "Ej: 1.85",
+      "addSelection": "Añadir Selección",
+      "configTitle": "Configuración del Sistema",
+      "stakeLabel": "Stake por Apuesta (€)",
+      "systemType": "Tipo de Sistema",
+      "systemNote": "Los sistemas disponibles dependen del número de selecciones válidas.",
+      "resultsTitle": "Proyección de Retornos",
+      "betsLines": "Líneas de Apuesta",
+      "totalStake": "Inversión Total",
+      "potentialReturn": "Retorno Potencial",
+      "netProfit": "Beneficio Neto (Profit)",
+      "formats": {
+        "decimal": "Decimal",
+        "fractional": "Fracc.",
+        "american": "Amer."
+      },
+      "guide": {
+        "title": "¿Cómo usar nuestra Calculadora de Apuestas? (Guía y FAQ)",
+        "h2": "¿Cómo usar nuestra Calculadora de Apuestas? (Guía para principiantes)",
+        "p1": "Si alguna vez te has preguntado ¿cómo calcular las ganancias de una apuesta combinada o de sistema?, estás en el lugar correcto. Nuestra calculadora multisistema está diseñada para que cualquier persona pueda saber cuánto dinero va a ganar.",
+        "stepTitle": "Paso a paso (Explicado para tontos)",
+        "step1": "Introduce las cuotas: Escribe el valor de las cuotas de tus selecciones.",
+        "step2": "Define el formato: Decimal, Fraccional o Americano.",
+        "step3": "Indica tu Stake: El dinero que quieres invertir por cada línea.",
+        "step4": "Elige el Sistema: Selecciona el tipo de apuesta deseado.",
+        "step5": "Mira la Proyección: ¡Ya está! Mira tu inversión total y beneficio real."
+      }
+    },
+    "bookmakers": {
+      "title": "Ranking de Casas de Apuestas",
+      "subtitle": "Comparamos y analizamos las mejores casas legales. Usa los filtros para encontrar tu método de pago favorito.",
+      "all": "Todas",
+      "bizum": "Aceptan Bizum",
+      "paypal": "PayPal",
+      "crypto": "Criptomonedas",
+      "noResults": "No se encontraron casas con estos criterios.",
+      "bonusLabel": "Bono de Bienvenida",
+      "paymentLabel": "Métodos de Pago",
+      "viewBonus": "Ver Bono",
+      "payments": {
+        "crypto": "Cripto",
+        "card": "Tarjeta"
+      }
+    },
+    "tipsters": {
+      "rankingTitle": "Ranking de Tipsters",
+      "rankingSubtitle": "Descubre a los mejores analistas de la plataforma, clasificados por su rendimiento y profit real verificado.",
+      "postPick": "Subir Pronóstico",
+      "loginAlert": "Debes iniciar sesión para subir un pronóstico.",
+      "filters": {
+        "yield": "Top Yield",
+        "profit": "Más Profit",
+        "new": "Nuevos"
+      }
+    },
+    "tipsterCard": {
+      "member": "Miembro",
+      "avgOdds": "Cuota Media",
+      "viewPicks": "Ver {{count}} Pronósticos"
+    },
+    "tipsterProfile": {
+      "eliteStats": "Estadísticas de Élite",
+      "yield": "Yield Real",
+      "winRate": "Win Rate",
+      "profit": "Profit Total",
+      "picks": "Pronósticos",
+      "recentActivity": "Actividad Reciente",
+      "recentPicks": "Pronósticos Recientes",
+      "market": "Mercado",
+      "odds": "Cuota",
+      "loadMore": "Cargar más pronósticos",
+      "follow": "Seguir"
+    },
+    "blog": {
+      "title": "Blog y Noticias",
+      "subtitle": "Aprende de los mejores analistas. Artículos sobre estrategia, gestión de banca y análisis estadístico avanzado.",
+      "searchPlaceholder": "Buscar artículos...",
+      "readMore": "Leer Artículo Completo",
+      "noArticles": "No se encontraron artículos con esos filtros.",
+      "categories": {
+        "all": "Todas",
+        "strategy": "Estrategia",
+        "systems": "Sistemas",
+        "management": "Gestión",
+        "analysis": "Análisis",
+        "tools": "Herramientas",
+        "psychology": "Psicología"
+      }
+    },
+    "auth": {
+      "login": "Iniciar Sesión",
+      "logout": "Cerrar Sesión",
+      "becomeTipster": "Hazte Tipster",
+      "myProfile": "Ver mi perfil"
+    },
+    "footer": {
+      "help": "Centro de Ayuda / FAQ",
+      "legal": "Aviso Legal",
+      "privacy": "Privacidad",
+      "cookies": "Cookies",
+      "terms": "Términos",
+      "rights": "Todos los derechos reservados. Juega con responsabilidad."
+    },
+    "common": {
+      "back": "Volver",
+      "yield": "Yield",
+      "profit": "Profit",
+      "winRate": "Win Rate",
+      "picks": "Picks",
+      "follow": "Seguir",
+      "language": "Idioma"
+    }
+  }
+}
