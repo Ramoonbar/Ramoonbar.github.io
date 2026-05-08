@@ -1,0 +1,13 @@
+{
+  "name": "rdisseny-portfolio",
+  "version": "1.0.0",
+  "description": "Ramon Bartomeu Portfolio - Web & Graphic Designer",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static site - no build required'",
+    "lint": "echo 'No linter configured for static HTML'"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.1.0"
+  }
+}

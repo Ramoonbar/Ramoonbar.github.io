@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Rakemon Trainer</title>
+  <link rel="icon" type="image/png" href="assets/images/pokeball-01.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <!-- D-pad Game Boy -->
+  <div id="dpad" class="gb" aria-label="Controles de movimiento">
+    <div class="grid">
+      <button data-dir="up"    class="btn up"    aria-label="Arriba">▲</button>
+      <button data-dir="left"  class="btn left"  aria-label="Izquierda">◀</button>
+      <button class="hub" aria-hidden="true"></button>
+      <button data-dir="right" class="btn right" aria-label="Derecha">▶</button>
+      <button data-dir="down"  class="btn down"  aria-label="Abajo">▼</button>
+    </div>
+  </div>
+
+  <!-- Botón de correr -->
+  <div id="actionpad" aria-label="Acción">
+    <button id="btn-run" class="btn-run" aria-label="Correr" aria-pressed="false">RUN</button>
+  </div>
+
+  <script>
+    window.canvas = document.getElementById("game");
+    window.ctx = canvas.getContext("2d");
+    ctx.imageSmoothingEnabled = false;
+  </script>
+
+  <!-- Orden -->
+  <script src="js/config.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/grass.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/controls.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

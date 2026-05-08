@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio profesional de Ramon Bartomeu - Diseñador Web y Gráfico especializado en UI/UX, WordPress y optimización digital en Barcelona.">
+    <meta name="keywords" content="Diseño Web, Diseño Gráfico, UI/UX, Ramon Bartomeu, Portfolio, Barcelona, WordPress, Frontend, SEO">
+    <meta name="author" content="Ramon Bartomeu">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ramoonbar.github.io/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ramoonbar.github.io/">
+    <meta property="og:title" content="Ramon Bartomeu | Diseñador Web & Gráfico">
+    <meta property="og:description" content="Portfolio profesional de Ramon Bartomeu. Especialista en UI/UX, WordPress y Diseño Gráfico.">
+    <meta property="og:image" content="Img/ramon.webp">
+
+    <title>Ramon Bartomeu | Diseñador Web & Gráfico UI/UX</title>
+    <link rel="icon" type="image/png" href="Img/RD logo.jpg">
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">RDisseny</div>
+        <button class="hamburger-menu" onclick="toggleMenu()" aria-label="Abrir menú">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </button>
+        <nav class="menu">
+            <ul>
+                <li><a href="#perfil" class="active" title="Volver al inicio - Perfil de Ramon Bartomeu" data-i18n="nav-profile">Perfil</a></li>
+                <li><a href="#experiencia" title="Ver mi experiencia laboral" data-i18n="nav-experience">Experiencia</a></li>
+                <li><a href="#educacion" title="Ver mi formación académica" data-i18n="nav-education">Educación</a></li>
+                <li><a href="#proyectos" title="Explorar mis proyectos destacados" data-i18n="nav-projects">Proyectos</a></li>
+                <li><a href="#contacto" title="Contactar con Ramon Bartomeu" data-i18n="nav-contact">Contacto</a></li>
+                <li class="lang-selector">
+                    <span class="lang-btn active" onclick="changeLanguage('es')">ES</span>
+                    <span class="lang-divider">|</span>
+                    <span class="lang-btn" onclick="changeLanguage('ca')">CA</span>
+                    <span class="lang-divider">|</span>
+                    <span class="lang-btn" onclick="changeLanguage('en')">EN</span>
+                </li>
+            </ul>
+        </nav>
+        <div class="menu-popup" id="menu-popup">
+            <button class="close-button" onclick="toggleMenu()" aria-label="Cerrar menú">
+                <div class="close-line"></div>
+                <div class="close-line"></div>
+            </button>
+
+            <nav class="menu-item"><a href="#perfil" onclick="toggleMenu()" title="Ir a Perfil" data-i18n="nav-profile">Perfil</a></nav>
+            <nav class="menu-item"><a href="#experiencia" onclick="toggleMenu()" title="Ir a Experiencia" data-i18n="nav-experience">Experiencia</a></nav>
+            <nav class="menu-item"><a href="#educacion" onclick="toggleMenu()" title="Ir a Educación" data-i18n="nav-education">Educación</a></nav>
+            <nav class="menu-item"><a href="#proyectos" onclick="toggleMenu()" title="Ir a Proyectos" data-i18n="nav-projects">Proyectos</a></nav>
+            <nav class="menu-item"><a href="#contacto" onclick="toggleMenu()" title="Ir a Contacto" data-i18n="nav-contact">Contacto</a></nav>
+            <div class="lang-selector-mobile">
+                <span class="lang-btn active" onclick="changeLanguage('es'); toggleMenu()">ES</span>
+                <span class="lang-btn" onclick="changeLanguage('ca'); toggleMenu()">CA</span>
+                <span class="lang-btn" onclick="changeLanguage('en'); toggleMenu()">EN</span>
+            </div>
+        </div>
+    </header>
+
+    <aside class="line-buttons">
+        <div class="line" onclick="activateLine(this)"></div>
+        <div class="line" onclick="activateLine(this)"></div>
+        <div class="line" onclick="activateLine(this)"></div>
+        <div class="line" onclick="activateLine(this)"></div>
+        <div class="line" onclick="activateLine(this)"></div>
+    </aside>
+
+    <main class="info-column">
+        <section id="perfil">
+            <div class="perfil-container">
+                <article class="perfil-texto">
+                    <h1 class="main-title" data-i18n="hero-title">Diseñador Web / Gráfico</h1>
+                    <p class="name-subtitle">Ramon Bartomeu</p>
+                    <p data-i18n="hero-desc">
+                        Cuento con más de tres años de experiencia en el sector tecnológico y digital, trabajando para empresas como Eurofirms Group y TV3.<br><br>Aunque mis inicios fueron en el diseño, actualmente estoy centrado en mi faceta como desarrollador web, especializándome en la creación y mantenimiento de productos digitales que combinan un código sólido con un enfoque particular en el diseño UI y UX.
+                    </p>
+                    <a href="Assets/Curriculum Ramon Bartomeu.pdf" class="download-btn" data-text="Descargar currículum" data-i18n="download-cv">Descargar currículum</a>
+
+                </article>
+                
+                <div class="perfil-imagen" id="xray-container">
+                    <img src="Img/ramon v2.webp" alt="Ramon Bartomeu - Efecto Rayos X" title="Efecto visual de perfil" class="img-back">
+                    <img src="Img/ramon.webp" alt="Ramon Bartomeu - Diseñador Web y Gráfico" title="Ramon Bartomeu" class="img-front" loading="eager">
+                    <div class="shadow"></div>
+                </div>
+            </div>
+        </section>      
+
+        <section id="experiencia" class="timeline-section">
+            <h2 data-i18n="exp-title">Experiencia</h2>
+        
+            <div class="timeline-item">
+                <div class="timeline-date" data-i18n="exp-current">2026</div>
+                <div class="timeline-card-wrapper">
+                    <div class="static-shadow"></div>
+                    <div class="timeline-content">
+                        <div class="job-info">
+                            <h3 data-i18n="job-eurofirms-title">WEB DEVELOPER | Eurofirms Group (Barcelona)</h3>
+                            <ul>
+                                <li data-i18n="job-eurofirms-item1">Diseño de interfaces y flujos de usuario optimizados con Figma.</li>
+                                <li data-i18n="job-eurofirms-item2">Optimización de conversión mediante análisis de mapas de calor (Clarity).</li>
+                                <li data-i18n="job-eurofirms-item3">Mantenimiento web, optimización WPO y gestión de servidores vía FTP.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-tags">
+                            <span data-i18n="skills-uiux">Diseño Web & UI/UX</span>
+                            <span data-i18n="tag-seo-sem">SEO & SEM</span>
+                            <span data-i18n="tag-clarity">Mapas de Calor (Clarity)</span>
+                            <span>WordPress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2024</div>
+                <div class="timeline-card-wrapper">
+                    <div class="static-shadow"></div>
+                    <div class="timeline-content">
+                        <div class="job-info">
+                            <h3 data-i18n="job-comuniza-title">DISEÑADOR GRÁFICO - WEB | Comuniza (Barcelona)</h3>
+                            <ul>
+                                <li data-i18n="job-comuniza-item1">Maquetación y estructuración de interfaces de alta fidelidad en Figma.</li>
+                                <li data-i18n="job-comuniza-item2">Gestión integral de contenidos y optimización de velocidad en WordPress.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-tags">
+                            <span>Figma</span>
+                            <span>WordPress</span>
+                            <span data-i18n="skills-uiux">Diseño Web & UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2021</div>
+                <div class="timeline-card-wrapper">
+                    <div class="static-shadow"></div>
+                    <div class="timeline-content">
+                        <div class="job-info">
+                            <h3 data-i18n="job-gene-title">MONITOR DE PISTA | Gené Karting (Viladecans)</h3>
+                            <ul>
+                                <li data-i18n="job-gene-item1">Atención al cliente y supervisión de seguridad técnica en pista.</li>
+                                <li data-i18n="job-gene-item2">Gestión de flujos de usuarios y asesoramiento especializado.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-tags">
+                            <span data-i18n="job-gene-item1-alt">Atención al Cliente</span>
+                            <span>Seguridad Técnica</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2019</div>
+                <div class="timeline-card-wrapper">
+                    <div class="static-shadow"></div>
+                    <div class="timeline-content">
+                        <div class="job-info">
+                            <h3 data-i18n="job-viladecans-tic-title">MONITOR TIC | Fundación Viladecans</h3>
+                            <ul>
+                                <li data-i18n="job-viladecans-tic-item1">Formación en alfabetización digital y robótica educativa.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-tags">
+                            <span data-i18n="job-viladecans-tic-item1-alt">Formación TIC</span>
+                            <span>Robótica Educativa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-date">2019</div>
+                <div class="timeline-card-wrapper">
+                    <div class="static-shadow"></div>
+                    <div class="timeline-content">
+                        <div class="job-info">
+                            <h3 data-i18n="job-tv3-title">DISEÑADOR GRÁFICO | TV3 (Sant Joan Despí)</h3>
+                            <ul>
+                                <li data-i18n="job-tv3-item1">Creación de piezas gráficas para entornos televisivos con Adobe Suite.</li>
+                                <li data-i18n="job-tv3-item2">Planificación colaborativa de proyectos visuales de alto impacto.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-tags">
+                            <span>Adobe Creative Suite</span>
+                            <span data-i18n="skills-graphic">Diseño Gráfico & Multimedia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-date">2017</div>
+                <div class="timeline-card-wrapper">
+                    <div class="static-shadow"></div>
+                    <div class="timeline-content">
+                        <div class="job-info">
+                            <h3 data-i18n="job-viladecans-web-title">DISEÑADOR WEB | Fundación Viladecans</h3>
+                            <ul>
+                                <li data-i18n="job-viladecans-web-item1">Desarrollo frontend (HTML/CSS/JS) y mantenimiento WordPress.</li>
+                                <li data-i18n="job-viladecans-web-item2">Mantenimiento técnico y actualización de activos digitales.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-tags">
+                            <span>HTML / CSS / JS</span>
+                            <span>WordPress</span>
+                            <span>Mantenimiento Web</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="educacion" class="education-section">
+            <div class="education-container">
+                <div class="education-column">
+                    <h2 class="education-title" data-i18n="edu-title">Educación & Certificaciones</h2>
+                    
+                    <div class="education-item">
+                        <div class="education-year">2025</div>
+                        <div class="education-card-wrapper">
+                            <div class="static-shadow"></div>
+                            <div class="education-content">
+                                <h3 data-i18n="edu-mkt-title">Marketing Digital & Automation</h3>
+                                <p data-i18n="edu-mkt-desc">MainJobs · Certificación Profesional</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-year">2024</div>
+                        <div class="education-card-wrapper">
+                            <div class="static-shadow"></div>
+                            <div class="education-content">
+                                <h3 data-i18n="edu-grado-title">Grado en Diseño Gráfico</h3>
+                                <p>ESDAPC Campus Serra i Abella</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="education-item">
+                        <div class="education-year">2019</div>
+                        <div class="education-card-wrapper">
+                            <div class="static-shadow"></div>
+                            <div class="education-content">
+                                <h3 data-i18n="edu-cfgs-title">CFGS de Artes Plásticas y Diseño</h3>
+                                <p>EMAID</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-year">2019</div>
+                        <div class="education-card-wrapper">
+                            <div class="static-shadow"></div>
+                            <div class="education-content">
+                                <h3 data-i18n="edu-monitor-title">Título de Monitor de Tiempo Libre</h3>
+                                <p>EFA</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="education-item">
+                        <div class="education-year">2017</div>
+                        <div class="education-card-wrapper">
+                            <div class="static-shadow"></div>
+                            <div class="education-content">
+                                <h3 data-i18n="edu-cfgm-title">CFGM en Asistencia al Producto Gráfico Interactivo</h3>
+                                <p>EMAID</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-column">
+                    <h2 class="skills-title" data-i18n="skills-title">Habilidades</h2>
+                    
+                    <div class="skills-group">
+                        <h3 data-i18n="skills-graphic">Diseño Gráfico & Multimedia</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag expert">Adobe Creative Suite</span>
+                            <span class="skill-tag">Branding & Identidad</span>
+                            <span class="skill-tag">Edición de Vídeo (Pr / Ae)</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3 data-i18n="skills-uiux">Diseño Web & UI/UX</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag expert">Figma</span>
+                            <span class="skill-tag">Prototipado & Wireframing</span>
+                            <span class="skill-tag">Diseño Responsivo</span>
+                            <span class="skill-tag">Interacción del Usuario</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3 data-i18n="skills-dev">Desarrollo & Tech</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag expert">WordPress</span>
+                            <span class="skill-tag expert">HTML / CSS</span>
+                            <span class="skill-tag">JavaScript / React</span>
+                            <span class="skill-tag">Git / GitHub</span>
+                            <span class="skill-tag">IA Generativa & Automatización</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3 data-i18n="skills-mkt">Marketing & Estrategia</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Marketing Digital / SEM</span>
+                            <span class="skill-tag">SEO Técnico / Semrush</span>
+                            <span class="skill-tag">Clarity / GTM</span>
+                            <span class="skill-tag">Shopify / E-commerce</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="projects-section">
+            <h2 data-i18n="projects-title">Proyectos</h2>
+            <div class="projects-container">
+                <a href="Proyectos/rwhats/index.html" target="_blank" class="project-card">
+                    <div class="static-shadow"></div>
+                    <div class="content-box">
+                        <div>
+                            <h3 data-i18n="project-rwhats-title">Chat de WhatsApp Personalizado</h3>
+                            <p>HTML / CSS / JS</p>
+                        </div>
+                        <span class="project-button"></span>
+                    </div>
+                </a>
+
+                <a href="Proyectos/Rakemon/index.html" target="_blank" class="project-card">
+                    <div class="static-shadow"></div>
+                    <div class="content-box">
+                        <div>
+                            <h3 data-i18n="project-rakemon-title">Rakemon - Juego de Pokémon</h3>
+                            <p>HTML / CSS / JS</p>
+                        </div>
+                        <span class="project-button"></span>
+                    </div>
+                </a>
+
+                <a href="Proyectos/Linker/dist/index.html" target="_blank" class="project-card">
+                    <div class="static-shadow"></div>
+                    <div class="content-box">
+                        <div>
+                            <h3 data-i18n="project-linker-title">Linker - Gestión de Enlaces</h3>
+                            <p>React / Vite / CSS</p>
+                        </div>
+                        <span class="project-button"></span>
+                    </div>
+                </a>
+
+                <a href="Proyectos/Informedia/dist/index.html" target="_blank" class="project-card">
+                    <div class="static-shadow"></div>
+                    <div class="content-box">
+                        <div>
+                            <h3 data-i18n="project-informedia-title">Informedia - Portal Informativo</h3>
+                            <p>React / Vite / CSS</p>
+                        </div>
+                        <span class="project-button"></span>
+                    </div>
+                </a>
+
+                <a href="https://www.eurofirms.com/es/es/" target="_blank" class="project-card">
+                    <div class="static-shadow"></div>
+                    <div class="content-box">
+                        <div>
+                            <h3 data-i18n="project-eurofirms-title">Eurofirms - People First</h3>
+                            <p>WordPress / SEO / UI/UX</p>
+                        </div>
+                        <span class="project-button"></span>
+                    </div>
+                </a>
+
+                <a href="https://www.clairejoster.com/es/es/" target="_blank" class="project-card">
+                    <div class="static-shadow"></div>
+                    <div class="content-box">
+                        <div>
+                            <h3 data-i18n="project-claire-title">Claire Joster - Talent Search</h3>
+                            <p>WordPress / SEO / UI/UX</p>
+                        </div>
+                        <span class="project-button"></span>
+                    </div>
+                </a>
+
+                <a href="https://www.eurofirmsfoundation.org/es/es/" target="_blank" class="project-card">
+                    <div class="static-shadow"></div>
+                    <div class="content-box">
+                        <div>
+                            <h3 data-i18n="project-foundation-title">Fundación Eurofirms</h3>
+                            <p data-i18n="project-foundation-desc">WordPress / Accesibilidad / UI/UX</p>
+                        </div>
+                        <span class="project-button"></span>
+                    </div>
+                </a>
+
+                <a href="https://spanglish-wedding.com/" target="_blank" class="project-card">
+                    <div class="static-shadow"></div>
+                    <div class="content-box">
+                        <div>
+                            <h3 data-i18n="project-wedding-title">Web de una boda</h3>
+                            <p>WordPress</p>
+                        </div>
+                        <span class="project-button"></span>
+                    </div>
+                </a>
+
+                <a href="https://www.figma.com/proto/tThA33JOHWsA79CI1X1AzL/PAg-web-TFG?page-id=0%3A1&node-id=238-330&t=wqKG4riwTUCS4v2j-1" target="_blank" class="project-card">
+                    <div class="static-shadow"></div>
+                    <div class="content-box">
+                        <div>
+                            <h3 data-i18n="project-tfg-title">TFG - Proyecto Diseño Web</h3>
+                            <p>Figma / UI / UX / Prototyping</p>
+                        </div>
+                        <span class="project-button"></span>
+                    </div>
+                </a>
+
+                <!-- 
+                <a href="Proyectos/fireleague/dist/index.html" target="_blank" class="project-card">
+                    <div class="static-shadow"></div>
+                    <div class="content-box">
+                        <div>
+                            <h3 data-i18n="project-fireleague-title">FireLeague - Próximamente</h3>
+                            <p>React / TS / Tailwind / Framer Motion</p>
+                        </div>
+                        <span class="project-button"></span>
+                    </div>
+                </a>
+                -->
+            </div>
+        </section>
+        
+        <section id="contacto" class="contact-section">
+            <h2 data-i18n="contact-title">Contacto</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p data-i18n="contact-desc">Si quieres contactar conmigo, no dudes en escribirme.<br>¡Estoy aquí para ayudar!</p>
+                    <a href="mailto:Ramoonbar@gmail.com" class="email" title="Enviar correo a Ramon Bartomeu">Ramoonbar@gmail.com</a>
+                    <div class="contact-buttons">
+                        <a href="https://www.linkedin.com/in/rdisseny" target="_blank" class="contact-btn primary">LinkedIn</a>
+                        <a href="https://github.com/Ramoonbar" target="_blank" class="contact-btn">GitHub</a>
+                        <a href="https://www.behance.net/Rdisseny" target="_blank" class="contact-btn">Behance</a>
+                    </div>
+                </div>
+
+                <div class="game-container-wrapper">
+                    <div class="game-header">
+                        <h3 class="game-title" data-i18n="game-zip-title">Serpiente numérica</h3>
+                    </div>
+
+                    <div class="game-container">
+                        <div class="zip-grid" id="zip-grid">
+                            <!-- Grid generado por JS -->
+                        </div>
+                        
+                        <div class="game-overlay active" id="game-start-overlay">
+                            <h3 data-i18n="game-zip-welcome">¿Listo para el reto?</h3>
+                            <button class="game-btn secondary" onclick="startGame()" data-i18n="game-zip-start">¡Empezar!</button>
+                        </div>
+
+                        <div class="game-overlay" id="game-overlay">
+                            <h3 data-i18n="game-zip-win">¡Completado!</h3>
+                            <p><span data-i18n="game-zip-time">Tu tiempo:</span> <span id="final-score">0.0s</span></p>
+                            <button class="game-btn" onclick="resetGame()" data-i18n="game-zip-replay">Jugar de nuevo</button>
+                        </div>
+                    </div>
+
+                    <div class="game-footer">
+                        <div class="game-controls">
+                            <button class="game-btn secondary" onclick="resetGame()" data-i18n="game-zip-reset" title="Reiniciar">⟳</button>
+                            <button class="game-btn secondary" onclick="undoMove()" title="Deshacer movimiento">←</button>
+                        </div>
+                        <div class="game-stats" id="zip-timer">0.0s</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+
+    <aside class="social-buttons">
+        <a href="https://www.linkedin.com/in/rdisseny" target="_blank" class="social-btn active">In</a>
+        <a href="https://github.com/Ramoonbar" target="_blank" class="social-btn">Git</a>
+        <a href="https://www.behance.net/Rdisseny" target="_blank" class="social-btn">Be</a>     
+    </aside>
+
+    <div class="experience-container">
+        <h2 data-i18n="footer-text">Funcionalidad y estética</h2>
+        <div class="experience-line"></div>
+    </div>
+
+    <div class="scroll-down">
+        <span data-i18n="scroll-down">Deslizar</span>
+        <div class="square">
+            <div class="moving-line"></div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="Css/game.css">
+    <script src="JavaScript/translations.js"></script>
+    <script src="JavaScript/script.js"></script>
+    <script src="JavaScript/game.js"></script>
+    
+    <!-- Vercel Speed Insights -->
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>
